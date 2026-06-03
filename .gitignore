@@ -25,6 +25,9 @@ KMS
 .gemini/installation_id
 .gemini/oauth_creds.json
 
+# Nested ARACHNE-X repo (pushed separately)
+NULLXES ARACHNE X ULTRA/
+
 # Cursor
 .cursor/chat/
 .cursor/rules/*.local.mdc

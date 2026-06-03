@@ -21,6 +21,8 @@ dependencies = [
     { name = "livekit-plugins-deepgram" },
     { name = "livekit-plugins-elevenlabs" },
     { name = "livekit-plugins-openai" },
+    { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "numpy", version = "2.4.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "python-dotenv" },
 ]
 
@@ -39,6 +41,7 @@ requires-dist = [
     { name = "livekit-plugins-deepgram", specifier = ">=1.5.9" },
     { name = "livekit-plugins-elevenlabs", specifier = ">=1.5.9" },
     { name = "livekit-plugins-openai", specifier = ">=1.5.9" },
+    { name = "numpy" },
     { name = "python-dotenv" },
 ]
 

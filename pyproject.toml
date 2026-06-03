@@ -10,6 +10,7 @@ requires-python = ">=3.10, <3.15"
 
 dependencies = [
     "aiohttp",
+    "numpy",
     "livekit-agents[anam,silero,turn-detector]~=1.5",
     "livekit-plugins-ai-coustics~=0.2",
     "livekit-plugins-deepgram>=1.5.9",

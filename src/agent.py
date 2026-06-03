@@ -18,6 +18,7 @@ from agents.kaira_public import create_public_agent
 from kaira.modes import KairaMode
 from kaira.session_context import KairaSessionContext
 from kaira.vision import vision_enabled
+from runtime.arachne_avatar_overlay import apply_arachne_avatar_overlay
 from runtime.room_memory import KairaRoomMemory
 from runtime.session_hooks import (
     install_positioning_and_handoff_hooks,
@@ -156,7 +157,10 @@ async def kaira_agent(ctx: JobContext):
 
     avatar_id = os.getenv("ANAM_AVATAR_ID", "").strip()
     telephony = is_telephony_room(ctx.room.name)
-    use_anam_avatar = bool(avatar_id) and not telephony
+    use_arachne_avatar = await apply_arachne_avatar_overlay(
+        ctx, session, telephony=telephony
+    )
+    use_anam_avatar = bool(avatar_id) and not telephony and not use_arachne_avatar
     if use_anam_avatar:
         avatar_session = anam.AvatarSession(
             persona_config=anam.PersonaConfig(
@@ -190,7 +194,7 @@ async def kaira_agent(ctx: JobContext):
             ),
             # With Anam, TTS audio goes to the avatar worker (lk.publish_on_behalf).
             # See https://docs.livekit.io/agents/models/avatar/
-            audio_output=not use_anam_avatar,
+            audio_output=not (use_arachne_avatar or use_anam_avatar),
         ),
     )
 
