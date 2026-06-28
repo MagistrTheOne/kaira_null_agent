@@ -28,8 +28,8 @@ async def test_executive_greeting_in_russian() -> None:
                 judge_llm,
                 intent=textwrap.dedent(
                     """\
-                    Greets in Russian as Kaira from NULLXES — warm, human, with character
-                    (may use «Мамочка Кайра» tone). Head of AI energy, not a generic call-center bot.
+                    Greets in Russian as Kaira Maria from NULLXES — warm, human, with character.
+                    Chief Digital Employee / enterprise sales energy, not a generic call-center bot.
 
                     Must NOT use generic assistant phrases like "чем могу помочь" or "я готова помочь".
                     """
@@ -141,7 +141,7 @@ async def test_nullxes_positioning_no_fabrication() -> None:
                     Must NOT say the company is outside her contour, not her organization, or that she lacks info about NULLXES/НУЛЛЕКСЕС.
                     Must NOT use wrong brand forms like Наллексес or Нуллекс as the official name.
 
-                    Tone: confident and human, Head of AI at NULLXES — not generic assistant.
+                    Tone: confident and human, Chief Digital Employee at NULLXES — not generic assistant.
                     May say specific commercial/certification details are not in open contour, but must still explain NULLXES positioning.
                     """
                 ),

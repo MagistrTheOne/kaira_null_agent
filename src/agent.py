@@ -55,7 +55,7 @@ if operator_mode_enabled():
 
 def build_kaira_tts() -> elevenlabs.TTS:
     return elevenlabs.TTS(
-        model=os.getenv("ELEVENLABS_TTS_MODEL", "eleven_multilingual_v2"),
+        model=os.getenv("ELEVENLABS_TTS_MODEL", "eleven_v3"),
         voice_id=os.getenv("ELEVENLABS_VOICE_ID", DEFAULT_ELEVENLABS_VOICE_ID),
         api_key=os.getenv("ELEVENLABS_API_KEY"),
         language=os.getenv("ELEVENLABS_LANGUAGE", "ru"),

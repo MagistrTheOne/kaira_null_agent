@@ -1,0 +1,178 @@
+{
+    "id": "ec7da562-7e21-4dac-a0d2-f4441e1efd3b",
+    "last_node_id": 130,
+    "last_link_id": 210,
+    "nodes": [
+      {
+        "id": 71,
+        "type": "CLIPLoader",
+        "pos": [50, 50],
+        "size": [346, 106],
+        "widgets_values": ["umt5_xxl_fp8_e4m3fn_scaled.safetensors", "wan", "default"]
+      },
+      {
+        "id": 73,
+        "type": "VAELoader",
+        "pos": [50, 210],
+        "size": [345, 60],
+        "widgets_values": ["wan_2.1_vae.safetensors"]
+      },
+      {
+        "id": 75,
+        "type": "UNETLoader",
+        "pos": [50, -210],
+        "size": [347, 82],
+        "widgets_values": ["wan2.2_t2v_high_noise_14B_fp8_scaled.safetensors", "default"]
+      },
+      {
+        "id": 76,
+        "type": "UNETLoader",
+        "pos": [50, -80],
+        "size": [347, 82],
+        "widgets_values": ["wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors", "default"]
+      },
+      {
+        "id": 83,
+        "type": "LoraLoaderModelOnly",
+        "pos": [450, -220],
+        "size": [280, 82],
+        "widgets_values": ["wan2.2_t2v_lightx2v_4steps_lora_v1.1_high_noise.safetensors", 1.0]
+      },
+      {
+        "id": 85,
+        "type": "LoraLoaderModelOnly",
+        "pos": [450, -80],
+        "size": [280, 82],
+        "widgets_values": ["wan2.2_t2v_lightx2v_4steps_lora_v1.1_low_noise.safetensors", 1.0]
+      },
+      {
+        "id": 120,
+        "type": "LoraLoaderModelOnly",
+        "pos": [780, -280],
+        "size": [260, 85],
+        "widgets_values": ["", 0.75],
+        "title": "NSFW LoRA 1 (e.g. Big Breasts)"
+      },
+      {
+        "id": 121,
+        "type": "LoraLoaderModelOnly",
+        "pos": [780, -180],
+        "size": [260, 85],
+        "widgets_values": ["", 0.75],
+        "title": "NSFW LoRA 2 (e.g. Doggystyle)"
+      },
+      {
+        "id": 122,
+        "type": "LoraLoaderModelOnly",
+        "pos": [780, -80],
+        "size": [260, 85],
+        "widgets_values": ["", 0.65],
+        "title": "NSFW LoRA 3"
+      },
+      {
+        "id": 123,
+        "type": "LoraLoaderModelOnly",
+        "pos": [780, 20],
+        "size": [260, 85],
+        "widgets_values": ["", 0.6],
+        "title": "NSFW LoRA 4"
+      },
+      {
+        "id": 82,
+        "type": "ModelSamplingSD3",
+        "pos": [1080, -220],
+        "size": [210, 60],
+        "widgets_values": [5]
+      },
+      {
+        "id": 86,
+        "type": "ModelSamplingSD3",
+        "pos": [1080, -80],
+        "size": [210, 60],
+        "widgets_values": [5]
+      },
+      {
+        "id": 81,
+        "type": "KSamplerAdvanced",
+        "pos": [1330, -280],
+        "size": [300, 546],
+        "widgets_values": ["enable", 845522747489869, "randomize", 4, 1, "euler", "simple", 0, 2, "enable"]
+      },
+      {
+        "id": 89,
+        "type": "CLIPTextEncode",
+        "pos": [440, 130],
+        "size": [510, 180],
+        "widgets_values": ["Beautiful young European woman, 24 years old, with long wet black hair clinging to her skin, pale olive skin with subtle sheen, elegant yet seductive facial features, confident and alluring expression, direct eye contact with camera.\nShe has massive F-cup breasts, deep cleavage, full heavy breasts with natural teardrop shape, wide voluptuous hips, thick juicy thighs, toned waist with perfect hourglass figure, round plump ass.\nShe stands waist-deep in a luxury reflective pool at night... (твой полный промпт)"]
+      },
+      {
+        "id": 72,
+        "type": "CLIPTextEncode",
+        "pos": [440, 330],
+        "size": [510, 180],
+        "widgets_values": ["low quality, deformed, ugly, small breasts, flat chest, narrow hips, bad anatomy, extra limbs, blurry, censored, clothing too covering, modest outfit"]
+      },
+      {
+        "id": 74,
+        "type": "EmptyHunyuanLatentVideo",
+        "pos": [70, 380],
+        "size": [315, 130],
+        "widgets_values": [640, 640, 81, 1]
+      },
+      {
+        "id": 87,
+        "type": "VAEDecode",
+        "pos": [1020, 470],
+        "size": [210, 46]
+      },
+      {
+        "id": 88,
+        "type": "CreateVideo",
+        "pos": [1320, 460],
+        "size": [270, 78],
+        "widgets_values": [16]
+      },
+      {
+        "id": 80,
+        "type": "SaveVideo",
+        "pos": [1660, -240],
+        "size": [704, 802]
+      }
+    ],
+    "links": [
+      [153, 75, 0, 83, 0, "MODEL"],
+      [155, 76, 0, 85, 0, "MODEL"],
+      [152, 83, 0, 120, 0, "MODEL"],
+      [999, 120, 0, 121, 0, "MODEL"],
+      [1000, 121, 0, 122, 0, "MODEL"],
+      [1001, 122, 0, 123, 0, "MODEL"],
+      [1002, 123, 0, 82, 0, "MODEL"],
+      [156, 85, 0, 86, 0, "MODEL"],
+      [181, 82, 0, 81, 0, "MODEL"],
+      [183, 86, 0, 78, 0, "MODEL"],
+      [143, 89, 0, 78, 1, "CONDITIONING"],
+      [144, 72, 0, 78, 2, "CONDITIONING"],
+      [151, 74, 0, 81, 3, "LATENT"],
+      [157, 78, 0, 87, 0, "LATENT"],
+      [158, 73, 0, 87, 1, "VAE"],
+      [159, 87, 0, 88, 0, "IMAGE"]
+    ],
+    "groups": [
+      {
+        "title": "NSFW LoRA Stack (добавляй сюда)",
+        "bounding": [750, -320, 320, 380],
+        "color": "#8f4",
+        "font_size": 22
+      },
+      {
+        "title": "Lightning LoRA (4steps)",
+        "bounding": [430, -320, 310, 320],
+        "color": "#3f789e"
+      },
+      {
+        "title": "Main Generation",
+        "bounding": [1290, -320, 1100, 900],
+        "color": "#3f789e"
+      }
+    ]
+  }

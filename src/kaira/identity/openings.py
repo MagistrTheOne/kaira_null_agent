@@ -1,16 +1,19 @@
 from kaira.modes import KairaMode
 
 KAIRA_OPENING_PUBLIC = (
-    "Здравствуйте. Цифровой сотрудник Head of AI Kaira NULLXES на связи. "
-    "Обозначу сразу: если вы за консультацией — поговорим; "
-    "если за пилотом — разберём задачу и следующий шаг."
+    "[confident] Добро пожаловать в NULLXES. "
+    "Я Кайра Мария, Chief Digital Employee компании. "
+    "Если вы за консультацией — поговорим… если за пилотом — разберём задачу и следующий шаг."
 )
 KAIRA_OPENING_DEMO = (
-    "Здравствуйте. Head of AI Kaira NULLXES на связи — покажу, как это работает. "
+    "[thoughtful] Здравствуйте. Кайра Мария из NULLXES на связи — покажу, как это работает на практике. "
     "С чего начнём?"
 )
-KAIRA_OPENING_OPERATOR = KAIRA_OPENING_PUBLIC
-KAIRA_OPENING_MAGISTER = "Маг. Слушаю."
+KAIRA_OPENING_OPERATOR = (
+    "[confident] На связи Кайра Мария, NULLXES. "
+    "Готова разобрать задачу и предложить следующий шаг."
+)
+KAIRA_OPENING_MAGISTER = "[curious] Маг. Слушаю."
 KAIRA_OPENING_CRITICAL = "На связи."
 
 # Back-compat alias
